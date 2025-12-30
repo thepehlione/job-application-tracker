@@ -62,8 +62,9 @@ job-application-tracker/
 
 ```
 
-🧱 Database Schema
+🧱 Database
 
+```text
 model Application {
 id String @id @default(cuid())
 company String
@@ -77,6 +78,8 @@ notes String?
 createdAt DateTime @default(now())
 updatedAt DateTime @updatedAt
 }
+
+```
 
 ⚙️ Setup & Run Locally
 
