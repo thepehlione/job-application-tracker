@@ -1,5 +1,7 @@
 # 📌 Job Application Tracker – Full-Stack Next.js Project
 
+Demo version is available on : https://job-application-tracker-vi0k.onrender.com/applications
+
 Job Application Tracker is a personal full-stack productivity tool designed to record, track, and manage job applications in one place.
 
 It helps users store company names, positions, application status, salary expectations, links, interview notes, and other details — keeping the job search process organized and stress-free.
