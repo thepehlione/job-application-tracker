@@ -1,4 +1,3 @@
-// data/applicationApiRepo.ts
 import type { JobApplication } from "@/types/application";
 
 const BASE_URL = "/api/applications";
@@ -17,13 +16,13 @@ export const applicationApiRepo = {
       console.log("GET BY ID:", id, res.status);
 
       if (res.status === 404) {
-        return null; // kayıt yok
+        return null; 
       }
 
       if (!res.ok) {
         const text = await res.text();
         console.error("getById failed:", res.status, text);
-        // UI çökmesin diye hata fırlatmıyoruz
+        
         return null;
       }
 
