@@ -9,7 +9,7 @@ import { useParams, useRouter } from "next/navigation";
 import { applicationApiRepo } from "@/data/applicationApiRepo";
 import type { ApplicationStatus, JobApplication } from "@/types/application";
 
-// ✏️ Edit form için schema
+// schema
 const editSchema = z.object({
   status: z.enum([
     "wishlist",
@@ -27,7 +27,7 @@ const editSchema = z.object({
 
 type FormData = z.infer<typeof editSchema>;
 
-// Status select için seçenekler
+// Options for status
 const STATUS_OPTIONS: { value: ApplicationStatus; label: string }[] = [
   { value: "wishlist", label: "Wishlist" },
   { value: "applied", label: "Applied" },
@@ -58,7 +58,7 @@ function ApplicationEditPage() {
     },
   });
 
-  // Uygulamayı id'den API ile çek
+  // Get application from Id by using API
   useEffect(() => {
     if (!idStr) {
       setLoading(false);
@@ -81,7 +81,7 @@ function ApplicationEditPage() {
 
         setApplication(app);
 
-        // Formu mevcut değerlerle doldur
+        // Fill the form with the current inputs
         reset({
           status: app.status as FormData["status"],
           location: app.location ?? "",
@@ -149,7 +149,7 @@ function ApplicationEditPage() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Başlık */}
+      {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-semibold tracking-tight">
           Edit Application
@@ -165,7 +165,7 @@ function ApplicationEditPage() {
         </p>
       </div>
 
-      {/* Kart */}
+      {/* Card */}
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-200 px-5 py-4">
           <p className="text-sm text-slate-600">

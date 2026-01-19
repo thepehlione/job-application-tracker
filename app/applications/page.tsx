@@ -9,7 +9,7 @@ export default function ApplicationsPage() {
   const [apps, setApps] = useState<JobApplication[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔹 Sadece TÜM başvuruları çekiyoruz
+  
   useEffect(() => {
     let cancelled = false;
 
@@ -37,7 +37,7 @@ export default function ApplicationsPage() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Üst başlık */}
+      {/* Header*/}
       <div className="mb-6 flex items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">

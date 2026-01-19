@@ -42,7 +42,7 @@ function AddNewApplication() {
   });
 
   const onSubmit = async (data: FormData) => {
-    // boş string → undefined temizliği
+    
     const cleaned: Omit<JobApplication, "id" | "createdAt" | "updatedAt"> = {
       company: data.company,
       role: data.role,
@@ -56,9 +56,7 @@ function AddNewApplication() {
 
     try {
       const created = await applicationApiRepo.create(cleaned);
-      // İstersen listeye:
-      // router.push("/applications");
-      // Bence daha şık: direkt detay sayfasına:
+
       router.push(`/applications/${created.id}`);
     } catch (err) {
       console.error("Create failed", err);
@@ -68,7 +66,7 @@ function AddNewApplication() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Başlık */}
+      {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-semibold tracking-tight">
           Add New Job Application
@@ -79,7 +77,7 @@ function AddNewApplication() {
         </p>
       </div>
 
-      {/* Kart */}
+      {/* Card */}
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-200 px-5 py-4">
           <p className="text-sm text-slate-600">

@@ -71,11 +71,11 @@ function ApplicationDetailPage() {
     );
   }
 
-  // 🔥 Buradan sonrası senin eski UI'nin API versiyonu
+  
   return (
     <div className="max-w-3xl mx-auto h-[85vh] flex justify-center items-center">
       <div className="w-full rounded-2xl px-4 py-4 shadow-xs shadow-slate-300 border-slate-200 border bg-white">
-        {/* Üst kısım: back, edit, delete, başlık */}
+        {/* back, edit, delete, Title*/}
         <div className="border-b relative pb-4">
           <button
             onClick={() => router.push("/applications")}
@@ -114,7 +114,7 @@ function ApplicationDetailPage() {
           </span>
         </div>
 
-        {/* Detay alanları */}
+        {/* Details */}
         <div className="mt-4 space-y-4 text-sm">
           {/* Salary */}
           {application.salary && (
